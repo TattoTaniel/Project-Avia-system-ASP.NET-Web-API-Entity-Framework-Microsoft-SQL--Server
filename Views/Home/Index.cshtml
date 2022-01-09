@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Avia_is.Models.Flight>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <h2 align="center" color="black">Информационная система авиакомпании "Полёт"</h2>
+    <p class="lead"></p>
+    <p>@Html.ActionLink("Создать новое", "Index", "AviaPassengers", null, new { @class = "btn btn-primary" })</p>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Номер маршрута </th>
+            <th>Аэропорт вылета </th>
+            <th>Аэропорт назначения </th>
+            <th>Стоимость билета(руб.) </th>
+            <th>Время полета(мин.) </th>
+            <th>Модель самолета </th>
+            <th>Готовность самолета </th>
+            <th>Номер самолета </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => item.IDFlight)
+                </td>
+
+                @foreach (var r in item.Route)
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelitem => r.Departure_airport)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => r.Destination_airport)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => r.Ticket_price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => r.Flight_duration)
+                    </td>
+
+                    foreach (var d in item.Plane)
+                    {
+
+
+                        <td>
+                            @Html.DisplayFor(modelitem => d.Model)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelitem => d.Readiness)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelitem => d.IDBort)
+                        </td>
+
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Avia_is.Models.Plane>
+
+@{
+    ViewBag.Title = "Самолет";
+}
+
+<h2>Информация о самолете</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Далее", "Index", "Commanders", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID маршрута</th>
+            <th>Модель </th>
+            <th>Срок эксплуатации(лет) </th>
+            <th>Готовность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight.IDFlight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lifetime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Readiness)
+                </td>
+                <td>
+                    @Html.ActionLink("Изменить", "Edit", new { id = item.IDBort }) |
+                    @Html.ActionLink("Детали", "Details", new { id = item.IDBort }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.IDBort })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

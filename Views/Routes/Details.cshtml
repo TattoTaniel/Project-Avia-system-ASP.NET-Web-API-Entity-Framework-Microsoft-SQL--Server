@@ -1,0 +1,58 @@
+﻿@model Avia_is.Models.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Маршрут</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Номер рейса </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight.IDFlight)
+        </dd>
+
+        <dt>
+            <label>Аэропорт вылета </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure_airport)
+        </dd>
+
+        <dt>
+            <label>Аэропорт назначения </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_airport)
+        </dd>
+
+        <dt>
+            <label>Цена билета </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ticket_price)
+        </dd>
+
+        <dt>
+            <label>Продолжительность полета (мин.) </label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight_duration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.IDRoute }) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

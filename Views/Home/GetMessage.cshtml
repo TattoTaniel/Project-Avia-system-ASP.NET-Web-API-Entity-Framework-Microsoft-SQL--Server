@@ -1,0 +1,23 @@
+﻿@model IEnumerable<string>
+
+    <h2>Основная информация</h2>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            @foreach (string t in Model)
+            {
+
+                <th>@t</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (string t in Model)
+            {
+
+                <td>@t</td>
+            }
+        </tr>
+    </tbody>
+</table>

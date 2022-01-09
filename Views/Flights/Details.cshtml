@@ -1,0 +1,50 @@
+﻿@model Avia_is.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Рейс</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Фамилия</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AviaPassenger.Lastname)
+        </dd>
+
+        <dt>
+            <label>Дата вылета</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure_date)
+        </dd>
+
+        <dt>
+            <label>Время вылета</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure_time)
+        </dd>
+
+        <dt>
+            <label>Готовность</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Readiness)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.IDFlight }) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

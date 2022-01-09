@@ -1,0 +1,66 @@
+﻿@model Avia_is.Models.Commander
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Командир</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Модель</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plane.Model)
+        </dd>
+
+        <dt>
+            <label>Фамилия</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+
+        <dt>
+            <label>Имя</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            <label>Отчество</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patronymic)
+        </dd>
+
+        <dt>
+            <label>Адрес</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            <label>Налет часов</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flying_hours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.IDnumber }) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

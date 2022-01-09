@@ -1,0 +1,50 @@
+﻿@model Avia_is.Models.Plane
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Самолет</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Номер рейса</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight.IDFlight)
+        </dd>
+
+        <dt>
+            <label>Модель</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            <label>Срок эксплуатации(лет)</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lifetime)
+        </dd>
+
+        <dt>
+            <label>Готовность</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Readiness)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.IDBort }) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

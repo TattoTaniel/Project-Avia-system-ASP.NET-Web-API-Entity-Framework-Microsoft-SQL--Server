@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Avia_is.Models.Plane>
+
+@{
+    ViewBag.Title = "Inform";
+}
+
+<h2>Информация о самолетах</h2>
+
+<p>
+    @Html.ActionLink("Вернуться на главную", "Index", "Home", null, new { @class = "btn btn-warning" })
+
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID маршрута</th>
+            <th>Модель </th>
+            <th>Срок эксплуатации(лет) </th>
+            <th>Готовность</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.IDFlight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lifetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Readiness)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

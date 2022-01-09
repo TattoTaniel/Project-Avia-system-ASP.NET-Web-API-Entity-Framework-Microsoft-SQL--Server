@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Avia_is.Models.Route>
+
+@{
+    ViewBag.Title = "Маршрут";
+}
+
+<h2>Информация о маршруте</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Далее", "Index", "Planes", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID рейса</th>
+            <th>Аэропорт вылета </th>
+            <th>Аэропорт назначения </th>
+            <th>Цена билета(руб.)</th>
+            <th>Продолжительность полета(мин.)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight.IDFlight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure_airport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination_airport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight_duration)
+                </td>
+                <td>
+                    @Html.ActionLink("Изменить", "Edit", new { id = item.IDRoute }) |
+                    @Html.ActionLink("Детали", "Details", new { id = item.IDRoute }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.IDRoute })
+                </td>
+            </tr>
+        }
+       </tbody>
+</table>
